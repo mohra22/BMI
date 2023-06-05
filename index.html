@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        form {
+            color: black;
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>welcome</h1>
+
+    <form>
+        <div>
+            <h3>Enter height here:</h3>
+            <label for="ftall"></label>
+            <input type="text" id="height">
+        </div>
+
+        <div>
+            <h3>Enter Weight here:</h3>
+            <input type="text" id="Weight">
+        </div>
+
+        <div>
+            <button type="button" id="myBtn">Enter</button>
+        </div>
+    </form>
+    
+    <div>
+         <h4 id="BMI"></h4>
+         <h3 id='BMI-category'></h3>
+    </div>
+
+</body>
+<script>
+    document.getElementById("myBtn").addEventListener("click", function () {
+        var height = document.getElementById("height").value
+        var Weight = document.getElementById("Weight").value
+        var BMI=Weight/(height*height)
+        var texe1
+        document.getElementById("BMI").innerHTML=BMI
+        if (BMI < 18) {
+            text1 = "Starvation"
+        }
+        
+        else if ( BMI<24.9) {
+            text1 = "Perfect weight"
+        }
+
+        else if ( BMI<29.9) {
+            text1 = "Overweight"
+        }
+        else if ( BMI<34.9) {
+            text1 = "First class overweight"
+        }
+        else if ( BMI<39.9) {
+            text1 = "Grade II weight gain"
+        }
+        else {
+            text1 = "serious obesity"
+        }
+
+        document.getElementById("BMI-category").innerHTML = `${text1}`
+    })
+</script>
+
+</html>
